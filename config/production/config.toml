@@ -1,2 +1,4 @@
 baseurl = "https://foreops.com/"
 canonifyURLs = true
+googleAnalytics = "UA-170884460-1"
+

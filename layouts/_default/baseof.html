@@ -26,5 +26,8 @@
       {{ partial "footer/alert.html" . }}
     {{ end }}
     {{ partial "footer/script-footer.html" . }}
+    {{ if and (eq (hugo.Environment) "production") (ne .Site.GoogleAnalytics "") }}
+      {{ template "_internal/google_analytics.html" . }}
+    {{ end }}
   </body>
 </html>
