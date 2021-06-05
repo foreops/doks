@@ -28,22 +28,20 @@ Two more methods are available if you need to use custom identity providers. Usi
 
 Webhook authentication allows your users to generate tokens through the external service. The users use these tokens when authenticating with the API server. When a client starts to authenticate using a bearer token, the authentication webhook POSTs a JSON-serialized TokenReview object containing the token to the remote service. The remote service indicates success by updating a status field in the request.  Usernames derived from various supported authentication identity providers must be unique cluster-wide.
 
-
 ### How do things running inside the cluster interact with each other?
 
 The Service Account controller manages service accounts inside namespaces. It creates a service account named “default” in all active namespaces. When you create a pod without a service account, it will use the “default” service account in the namespace. Service accounts that do not belong to the kube-system namespace have no permissions. Application access the API server using the service account specified in their pod. An excellent example of such an application is a Kubernetes dashboard that exists in a pod. It will use the service account to talk to the API server. Service accounts use credentials from secrets mounted into pods. You can only use one service account per pod. You can specify a service account in the pods manifest. You can grant particular roles to service accounts as needed. You should create application-specific service accounts and then give them permissions as required.
 
 When the API server creates a service account, it generates a token and stores it in a Secret object. The API server then links this to the newly created service account. The token in secret is an authentication bearer token used to communicate with the API server. When you create pods, this secret is made available to the pod as a volume.
 
-
 ### Key Takeaways
 
-*   Authentication in Kubernetes is about verifying the identity of users (humans) and services (machines, processes, or applications).
-*   Kubernetes does not have objects which represent user accounts. Users do not log in, and there are no sessions or timeouts.
-*   You do not connect Kubernetes to a user directory.
-*   Kubernetes supports several authentication mechanisms out of the box and provides support for custom authentication schemes.
-*   Usernames derived from various supported authentication identity providers must be unique cluster-wide.
-*   A service account named “default” exists in all active namespaces.
-*   Service accounts that do not belong to the kube-system namespace have no permissions.
-*   Service accounts use credentials from secrets mounted into pods. Each pod can use one service account only. 
-*   When you create pods, the secret in the service account is made available as a volume.
+* Authentication in Kubernetes is about verifying the identity of users (humans) and services (machines, processes, or applications).
+* Kubernetes does not have objects which represent user accounts. Users do not log in, and there are no sessions or timeouts.
+* You do not connect Kubernetes to a user directory.
+  Kubernetes supports several authentication mechanisms out of the box and provides support for custom authentication schemes.
+* Usernames derived from various supported authentication identity providers must be unique cluster-wide.
+* A service account named “default” exists in all active namespaces.
+* Service accounts that do not belong to the kube-system namespace have no permissions.
+* Service accounts use credentials from secrets mounted into pods. Each pod can use one service account only.
+* When you create pods, the secret in the service account is made available as a volume.
