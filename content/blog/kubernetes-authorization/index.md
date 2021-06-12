@@ -95,13 +95,13 @@ The remote service would respond and fill the 'status' field of the request to a
 
 #### Key Takeaways
 
-* One of the guiding principles of REST is statelessness. Each request from a client must contain all the information required to complete the request, including authentication and authorization.  
-* The API server denies all requests by default. It only authorizes a request when all parts of the request match a policy. 
+* One of the guiding principles of REST is statelessness. Each request from a client must contain all the information required to complete the request, including authentication and authorization.
+* The API server denies all requests by default. It only authorizes a request when all parts of the request match a policy.
 * Kubernetes will evaluate all configured authorization modes and return immediately as soon as it finds one that approves or denies the request and ignores the rest of the authorizers.
-* There are no "deny" rules in RBAC roles as they are purely additive.  The users, groups, or service accounts are denied access to cluster resources by default, and you explicitly grant access to them. 
-* A role does not specify a user or group of users; you essentially assign roles to users or groups, thus creating a binding. 
+* There are no "deny" rules in RBAC roles as they are purely additive.  The users, groups, or service accounts are denied access to cluster resources by default, and you explicitly grant access to them.
+* A role does not specify a user or group of users; you essentially assign roles to users or groups, thus creating a binding.
 * Node authorization mode in Kubernetes authorizes API requests made by kubelets running on nodes.
 * Attribute-based access control (ABAC) is an access control model that consists of rules based on the attributes of the subject (user or group), attributes of the object (pods, namespace), action (read, write), and environmental conditions (nonResourcePath: "/version").
-* Managing ABAC policies requires one to log into the node to update the file containing ABAC policies. In contrast, administrators can manage RBAC through Kubernetes API. 
-* A webhook is a callback over HTTP. A callback is usually a function passed to another function. The first function calls this function (callback) after it completes; sometimes, it is called a "call-after" function. 
- * When Webhook mode is active, Kubernetes will query an outside RESTful service to determine user privileges. 
+* Managing ABAC policies requires one to log into the node to update the file containing ABAC policies. In contrast, administrators can manage RBAC through Kubernetes API.
+* A webhook is a callback over HTTP. A callback is usually a function passed to another function. The first function calls this function (callback) after it completes; sometimes, it is called a "call-after" function.
+ * When Webhook mode is active, Kubernetes will query an outside RESTful service to determine user privileges.
