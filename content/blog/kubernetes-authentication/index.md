@@ -1,7 +1,7 @@
 ---
 title: "Kubernetes Authentication"
 description: "Authentication in Kubernetes is about verifying the identity of users and services."
-lead: ""
+lead: "Authentication in Kubernetes is about verifying the identity of users and services."
 date: 2021-06-04T13:12:08-04:00
 lastmod: 2021-06-04T13:12:08-04:00
 draft: false
@@ -10,7 +10,7 @@ images: ["kubernetes-authentication.png"]
 contributors: ["Sharjeel Aziz"]
 ---
 
-Authentication in Kubernetes is about verifying the identity of users and services. This post will discuss authentication methods for two types of accounts that access the Kubernetes cluster: users and machines. While cluster administrators and application developers require access to the cluster to manage and deploy applications respectively, machines, processes, and applications also need access to the cluster, which they obtain through the service accounts.
+This post will discuss authentication methods for two types of accounts that access the Kubernetes cluster: users and machines. While cluster administrators and application developers require access to the cluster to manage and deploy applications respectively, machines, processes, and applications also need access to the cluster, which they obtain through the service accounts.
 
 {{< img src="kubernetes-authentication.png" alt="Kubernetes Authentication" caption="Kubernetes Authentication" class="wide" >}}
 
