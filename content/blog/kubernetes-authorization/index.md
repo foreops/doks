@@ -15,10 +15,11 @@ Kubernetes API Server is implemented as a RESTful API service and acts as a fron
 The API server denies all requests by default. It only authorizes a request when all parts of the request match a policy. You can configure multiple authorization modes. In such a case, it will evaluate all authorization modes one by one until it finds the first authorizer that approves or denies the request, and it immediately returns the result ignoring the rest of the authorizers.
 
 Kubernetes supports several authorization modes:
-RBAC
-Node
-ABAC
-Webhook
+
+* RBAC
+* Node
+* ABAC
+* Webhook
 
 #### RBAC
 
