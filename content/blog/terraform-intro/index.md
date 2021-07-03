@@ -36,7 +36,6 @@ terraform --version
   on darwin_amd64
 ```
 
-
 ## Getting Started
 
 Terraform HFCL files have `.tf` file extension. Let's create our first file, `main.tf`:
@@ -51,13 +50,13 @@ resource "random_password" "admin_password" {
 
 And we are done! The code above will create a random password. We use the following three commands to run this code.
 
-#### 1. Initialize
+### 1. Initialize
 
 Before we run our script, we have to initialize the "backend" and download the referenced plugins.  Let's look into these quickly:
 
-  * *Backend* is where terraform stores it state. After every code run, Terraform stores the configuration and the result in a state file. State can be stored locally or in remote backends. When working with a real environment, you have to share, version, backup, and secure your terraform state and remote backends are ideal. However, since we have not configured any remote backend, the terraform will create the state locally.
+* *Backend* is where terraform stores it state. After every code run, Terraform stores the configuration and the result in a state file. State can be stored locally or in remote backends. When working with a real environment, you have to share, version, backup, and secure your terraform state and remote backends are ideal. However, since we have not configured any remote backend, the terraform will create the state locally.
 
-  * We are using the [`random_password`](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) *plugin* to create our password. This plugin is provided by HashiCorp and is available through their public registry.
+* We are using the [`random_password`](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) *plugin* to create our password. This plugin is provided by HashiCorp and is available through their public registry.
 
 ```bash
 $ terraform init
@@ -97,7 +96,8 @@ $ ls -a
 
 `.terraform` is the folder where the plugins are downloaded. This folder is auto-generated and contains the binary files, it should not be included in the version control system.
 
-#### 2. Plan
+### 2. Plan
+
 The second step is to list the changes the script is going to make. Since this is our first time running this code, this step is not as helpful. However, it will be beneficial when you make changes to any existing infrastructure.
 
 ```bash
@@ -136,7 +136,7 @@ can't guarantee that exactly these actions will be performed if
 
 We are adding one new resource, perfect. So let's apply these changes now.
 
-#### 4. Apply
+### 4. Apply
 
 ```bash
 $ terraform apply
