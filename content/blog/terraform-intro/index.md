@@ -12,7 +12,7 @@ contributors: ["Faheem Memon"]
 
 {{< img src="terraform-logo.png" alt="Introduction to Terraform" class="wide" >}}
 
-Cloud vendors provide their own scripting languages for infrastructure management, such as AWS's Cloud Formatios or Azure's Resource Manager Templates, but scripting with those can easily get complicated, brittle, and hard to maintain. Terraform uses the simple yet powerful HashiCorp Configuration Language (HCL) which can be scaled easily to an entire enterprise without the side-effects. Terraform has been embraced across the industry and has also been gaining favor with major cloud providers. Check out Azure's [Bicep project](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview) or Google Cloud's recent [announcement](https://cloud.google.com/blog/products/management-tools/private-catalog-for-google-cloud-marketplace-supports-terraform) to support Terraform for Marketplace Private Catalogs.
+Cloud vendors provide their own scripting languages for infrastructure management, such as AWS's Cloud Formation or Azure's Resource Manager Templates, but scripting with those can easily get complicated, brittle, and hard to maintain. Terraform uses the simple yet powerful HashiCorp Configuration Language (HCL) which can be scaled easily to an entire enterprise without the side-effects. Terraform has been embraced across the industry and has also been gaining favor with major cloud providers. Check out Azure's [Bicep project](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview) or Google Cloud's recent [announcement](https://cloud.google.com/blog/products/management-tools/private-catalog-for-google-cloud-marketplace-supports-terraform) to support Terraform for Marketplace Private Catalogs.
 
 Terraform not only works across cloud, but its vast ecosystem of plugins also covers on-premises virtualization systems or private clouds such as [vSphere](https://registry.terraform.io/providers/hashicorp/vsphere/latest), [Nutanix](https://registry.terraform.io/providers/nutanix/nutanix/latest), [Cisco ACI](https://registry.terraform.io/providers/CiscoDevNet/aci/latest), [HPE OneView](https://registry.terraform.io/providers/HewlettPackard/oneview/latest) and others. You get more milage out of Terraform compared to other tooling. It also works with common shared services such as [F5 BigIP](https://registry.terraform.io/providers/F5Networks/bigip/latest) load-balancers, [Infoblox](https://registry.terraform.io/providers/infobloxopen/infoblox/latest) Grid, Microsoft [Active Directory](https://registry.terraform.io/providers/hashicorp/ad/latest), and others. Additionally, it can be extended through its [plugin SDK](https://github.com/hashicorp/terraform-plugin-sdk) if needed. Remeber to check out the [Terraform Registry](https://registry.terraform.io/) and colloborate with existing open-source community before you build your own plugins.
 
@@ -136,7 +136,7 @@ can't guarantee that exactly these actions will be performed if
 
 We are adding one new resource, perfect. So let's apply these changes now.
 
-### 4. Apply
+### 3. Apply
 
 ```bash
 $ terraform apply
