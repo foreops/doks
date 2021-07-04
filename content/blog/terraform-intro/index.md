@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Terraform"
 description: "Get started with terraform, learn basics, and write your first terraform file."
-lead: "After almost seven (7) years in development, 11,000 pull requests, and 100 million downloads, Hashicorp Terraform has finally reached general availbility. Terraform has become a tool of choice for many DevOps teams for infrastructure provisioning and configuration. Terraform gels in nicely with both mutable or immutable infrastructure management approaches."
+lead: "After almost seven (7) years in development, 11,000 pull requests, and 100 million downloads, Hashicorp Terraform has finally reached general availbility. Terraform has become a tool of choice for many DevOps teams for infrastructure provisioning and configuration. In this post we will review terraform basics and write our frist terraform script."
 date: 2021-07-02T11:00:00-04:00
 lastmod: 2021-07-02T11:00:00-04:00
 draft: false
