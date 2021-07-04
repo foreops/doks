@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Terraform"
 description: "Get started with terraform, learn basics, and write your first terraform file."
-lead: "After almost seven (7) years in development, 11,000 pull requests, and 100 million downloads, Hashicorp Terraform has finally reached general availbility. Terraform has become a tool of choice for many DevOps teams for infrastructure provisioning and configuration. In this post we will review terraform basics and write our frist terraform script."
+lead: "After almost seven (7) years in development, 11,000 pull requests, and 100 million downloads, Hashicorp Terraform has finally reached general availbility. Terraform has become a tool of choice for many DevOps teams for infrastructure provisioning and configuration. In this post we will review Terraform basics and write our frist Terraform script."
 date: 2021-07-02T11:00:00-04:00
 lastmod: 2021-07-02T11:00:00-04:00
 draft: false
@@ -54,7 +54,7 @@ And we are done! The code above will create a random password. We use the follow
 
 Before we run our script, we have to initialize the "backend" and download the referenced plugins.  Let's look into these quickly:
 
-* *Backend* is where terraform stores it state. After every code run, Terraform stores the configuration and the result in a state file. State can be stored locally or in remote backends. When working with a real environment, you have to share, version, backup, and secure your terraform state and remote backends are ideal. However, since we have not configured any remote backend, the terraform will create the state locally.
+* *Backend* is where Terraform stores it state. After every code run, Terraform stores the configuration and the result in a state file. State can be stored locally or in remote backends. When working with a real environment, you have to share, version, backup, and secure your Terraform state and remote backends are ideal. However, since we have not configured any remote backend, the Terraform will create the state locally.
 
 * We are using the [`random_password`](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) *plugin* to create our password. This plugin is provided by HashiCorp and is available through their public registry.
 
@@ -134,7 +134,7 @@ can't guarantee that exactly these actions will be performed if
 "terraform apply" is subsequently run.
 ```
 
-We are adding one new resource, perfect. So let's apply these changes now.
+We are adding one new resource, perfec! So let's apply these changes now.
 
 ### 3. Apply
 
@@ -224,6 +224,6 @@ $ cat terraform.tfstate
 }
 ```
 
-You can see that the password is stored in the state as plain text. That is why you need to keep the state in a secure place. For added encryption, Terraform supports several remote backends that provide encryption at rest.
+You can see that the password is stored in the state file as plain text. That is why you need to keep this file in a secure place. For added security, Terraform supports several remote backends that provide encryption at rest.
 
 That's it for this post, in our next post we will create a virtual machine in AWS with some basic configuration. Stay tuned.
