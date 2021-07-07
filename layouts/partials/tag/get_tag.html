@@ -1,0 +1,8 @@
+{{ with .Param "tags" }}
+  {{ range $index, $tag := (. | sort) }} 
+  {{ with $.Site.GetPage (printf "/%s/%s" "tags" $tag) }}
+    #{{ $tag | urlize }}
+  {{ end }}
+  {{ end }}
+<br><br>
+{{ end }}

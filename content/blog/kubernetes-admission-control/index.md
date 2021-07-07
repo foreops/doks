@@ -8,6 +8,7 @@ draft: false
 weight: 50
 images: ["kubernetes-admission-control.jpg"]
 contributors: ["Sharjeel Aziz"]
+tags: ["kubernetes","authentication","authorization"]
 ---
 
  They come in handy to implement or validate resource limits or ensure that the deployments are not using the "latest" image tags. For instance, you can restrict pods to pull container images from certain registries or disallow containers to run in privileged mode. In addition, admission controllers can enforce label naming conventions or add annotations, such as a cost center to objects.

@@ -8,6 +8,7 @@ draft: false
 images: ["terraform-logo.png"]
 weight: 50
 contributors: ["Faheem Memon"]
+tags: ["terraform"]
 ---
 
 {{< img src="terraform-logo.png" alt="Introduction to Terraform" class="wide" >}}

@@ -8,6 +8,7 @@ draft: false
 weight: 50
 images: ["kubernetes-authorization.jpg"]
 contributors: ["Sharjeel Aziz"]
+tags: ["kubernetes","authorization"]
 ---
 
 Kubernetes API Server is implemented as a RESTful API service and acts as a front end to its control plane. [REST](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm) is an architecture style developed by [Roy Thomas Fielding](http://www.ics.uci.edu/~fielding/). One of the guiding principles of REST is statelessness. Each request from a client must contain all the information required to complete the request, including authentication and authorization. The RESTful API implementation in Kubernetes makes it compatible with existing on-prem or cloud access systems.  
