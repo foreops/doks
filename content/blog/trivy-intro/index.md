@@ -8,6 +8,7 @@ draft: false
 images: ["trivy-jenkins.png"]
 weight: 50
 contributors: ["Faheem Memon"]
+tags: ["security","trivy","container","scanner"]
 ---
 
 You can identify and address the security vulnerabilities earlier in the software development life-cycle if you integrate a scanner in the continuous integration (CI) pipelines. There are multiple open-source and commercial tools out there that can scan the applications and containers. When comparing these tools, we consider the following aspects:
