@@ -5,7 +5,7 @@
       <div class="blog-header">
         <h1>{{ .Title }}</h1>
         {{ partial "main/blog-meta.html" . }}
-        {{ partial "tag/get-tag.html" . -}}
+        <p><small>{{ partial "tag/get-tag-card.html" . -}}</small></p>
       </div>
       <p class="lead">{{ .Params.lead | safeHTML }}</p>
       {{ .Content }}
