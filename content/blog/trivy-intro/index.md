@@ -21,7 +21,7 @@ You can identify and address the security vulnerabilities earlier in the softwar
 
 CI pipeline integration is often just one part of an enterprise security toolchain. Tools like AquaSecurity, Prisma, Snyk, and others provide additional features such as periodic re-scanning, run-time monitoring, alerting, and a centralized dashboard for the security teams. In this blog post, however, we will look into [Trivy](https://github.com/aquasecurity/trivy). Trivy is an open-source scanner from the AquaSecurity team that can scan container images or filesystem paths for vulnerable operating system packages or application dependencies.
 
-{{< img src="trivy-highlight.png" alt="Trivy: A simple and comprehensive vulernerability" caption="" class="wide" >}}
+{{< img-simple src="trivy-highlight.png" alt="Trivy: A simple and comprehensive vulernerability" caption="" class="wide" >}}
 
 Let's review our scanner selection criteria with Trivy.
 
@@ -74,7 +74,7 @@ Let's take `trivy` for a spin and see it in action.
 trivy image node:8-alpine
 ```
 
-{{< img src="trivy-scan-cli.png" alt="trivy image node:8-alpine" caption="Trivy Scan Report" class="wide" >}}
+{{< img-simple src="trivy-scan-cli.png" alt="trivy image node:8-alpine" caption="Trivy Scan Report" class="wide" >}}
 
 `node:11-alpine` seems to have several security vulnerabilities, including a few CRITICAL and HIGH. However, all of them are identified in the underlined `Alpine 3.9.4` operating system since we have not deployed any custom applications inside the container. Trivy can differentiate between OS and application dependency base vulnerabilities.
 
@@ -85,7 +85,7 @@ wget https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/html.tpl
 trivy image --format template --template @./html.tpl -o report.html node:11-alpine
 ```
 
-{{< img src="trivy-scan-html.png" alt="trivy image node:8-alpine" caption="Trivy Scan HTML Report" class="wide" >}}
+{{< img-simple src="trivy-scan-html.png" alt="trivy image node:8-alpine" caption="Trivy Scan HTML Report" class="wide" >}}
 
 ### Jenkins Integration
 
@@ -119,7 +119,7 @@ Let's add a scanning feature in our `Jenkinsfile`:
 ...
 ```
 
-{{< img src="trivy-scan-jenkins.png" alt="trivy image node:8-alpine" caption="Trivy Scan HTML Report" class="wide" >}}
+{{< img-simple src="trivy-scan-jenkins.png" alt="trivy image node:8-alpine" caption="Trivy Scan HTML Report" class="wide" >}}
 
 The script downloads and runs the scanner on a [nodejs](https://github.com/faheem556/funfact) application path. It runs the scan twice, the second time from the previous cache, and fails the build if it discovers are any CRITICAL vulnerabilities. Finally, the report to the pipeline using [HTML Publisher](https://plugins.jenkins.io/htmlpublisher/) plugin.
 
