@@ -11,7 +11,7 @@ contributors: ["Faheem Memon"]
 tags: ["terraform"]
 ---
 
-{{< img src="terraform-logo.png" alt="Introduction to Terraform" class="wide" >}}
+{{< img-simple src="terraform-logo.png" alt="Introduction to Terraform" class="wide" width="60%">}}
 
 Cloud vendors provide their own scripting languages for infrastructure management, such as AWS's Cloud Formation or Azure's Resource Manager Templates, but scripting with those can easily get complicated, brittle, and hard to maintain. Terraform uses the simple yet powerful HashiCorp Configuration Language (HCL) which can be scaled easily to an entire enterprise without the side-effects. Terraform has been embraced across the industry and has also been gaining favor with major cloud providers. Check out Azure's [Bicep project](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview) or Google Cloud's recent [announcement](https://cloud.google.com/blog/products/management-tools/private-catalog-for-google-cloud-marketplace-supports-terraform) to support Terraform for Marketplace Private Catalogs.
 

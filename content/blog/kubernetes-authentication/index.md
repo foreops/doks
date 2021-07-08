@@ -13,7 +13,7 @@ tags: ["kubernetes","authentication"]
 
 This post will discuss authentication methods for two types of accounts that access the Kubernetes cluster: users and machines. While cluster administrators and application developers require access to the cluster to manage and deploy applications respectively, machines, processes, and applications also need access to the cluster, which they obtain through the service accounts.
 
-{{< img src="kubernetes-authentication.png" alt="Kubernetes Authentication" caption="Kubernetes Authentication" class="wide" >}}
+{{< img-simple src="kubernetes-authentication.png" alt="Kubernetes Authentication" caption="Kubernetes Authentication" class="wide" >}}
 
 ### User Authentication
 
