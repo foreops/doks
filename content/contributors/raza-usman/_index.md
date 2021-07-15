@@ -10,4 +10,4 @@ Tech Enthusiast | Interest in IT Management, Materials Sciences, NeuroScience & 
 
 https://www.linkedin.com/in/razausman/
 
-[@RazaU73422631](https://twitter.com/)
+[@RU1001001](https://twitter.com/)
