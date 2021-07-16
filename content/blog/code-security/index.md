@@ -6,7 +6,7 @@ date: 2021-07-08T11:38:38-04:00
 lastmod: 2021-07-08T11:38:38-04:00
 draft: false
 weight: 50
-images: ["code-security.jpg"]
+images: ["code-security.png"]
 contributors: ["Sharjeel Aziz"]
 tags: ["security","4cs","secure","coding","cloud"]
 ---
