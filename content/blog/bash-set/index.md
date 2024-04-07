@@ -5,7 +5,7 @@ lead: "Bash scripts are an essential tool for automating tasks and streamlining 
 summary: "Bash scripts are an essential tool for automating tasks and streamlining workflows. However, to truly unleash their potential, it's crucial to understand and utilize some key commands that can significantly enhance the reliability, security, and debuggability of your scripts."
 date: 2024-04-07T16:27:22+02:00
 lastmod: 2024-04-07T16:27:22+02:00
-draft: false
+draft: true 
 weight: 50
 categories: []
 tags: ["bash","coding","containers","Dockerfile"]
