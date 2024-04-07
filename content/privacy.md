@@ -1,6 +1,6 @@
 ---
 title: "Privacy Policy"
-description: ""
+description: "We do not use cookies and we do not collect any personal data."
 summary: ""
 date: 2023-09-07T17:19:07+02:00
 lastmod: 2023-09-07T17:19:07+02:00

@@ -2,58 +2,70 @@
 <section class="section container-fluid mt-n3 pb-3">
   <div class="row justify-content-center">
     <div class="col-lg-12 text-center">
-      <h1>{{ .Title }}</h1>
+      <h1 class="mt-0">{{ .Title }}</h1>
     </div>
     <div class="col-lg-9 col-xl-8 text-center">
       <p class="lead">{{ .Params.lead | safeHTML }}</p>
-      <a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="/docs/{{ if site.Params.doks.docsVersioning }}{{ site.Params.doks.docsVersion }}/{{ end }}guides/example-guide/" role="button">{{ i18n "get_started" }}</a>
-      {{ .Content }}
     </div>
   </div>
 </section>
-{{ end }}
+{{end}}
 
 {{ define "sidebar-prefooter" }}
-  {{ if site.Params.doks.backgroundDots -}}
-  <div class="d-flex justify-content-start">
-    <div class="bg-dots"></div>
-  </div>
-  {{ end -}}
-  {{ if eq $.Site.Language.LanguageName "English" }}
-  <section class="section section-md section-features">
-    <div class="container">
-      <div class="row justify-content-center text-center">
-        <div class="col-lg-5">
-          <h2 class="h4">Update content</h2>
-          <p>Edit <code>content/_index.md</code> to see this page change.</p>
-        </div>
-        <div class="col-lg-5">
-          <h2 class="h4">Add new content</h2>
-          <p>Add Markdown files to <code>content</code> to create new pages.</p>
-        </div>
-        <div class="col-lg-5">
-          <h2 class="h4">Configure your site</h2>
-          <p>Edit your config in <code>config/_default/hyas/doks.toml</code>.</p>
-        </div>
-        <div class="col-lg-5">
-          <h2 class="h4">Read the docs</h2>
-          <p>Learn more in the <a href="https://getdoks.org/">Docs</a>.</p>
-        </div>
+<section class="section section-sm">
+  <div class="container">
+    <div class="row justify-content-center mt-lg-3">
+      <div class="col-lg-9">
+        <article>
+          <div class="card-list">
+            {{ range (where .Site.RegularPages "Section" "blog") }}
+              <div class="card">
+                <div class="card-body">
+                  <h2 class="h3"><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}</a></h2>
+                  <p>{{ .Params.lead | safeHTML }}</p>
+                  {{ partial "main/blog-meta.html" . -}}
+                  <p class="blog-tags"><small>{{ partial "tag/get-tag-card.html" . -}}</small></p>
+                </div>
+              </div>
+            {{ end -}}
+          </div>
+        </article>
       </div>
+      <div class="col-lg-4 text-center">
+        <h2 class="h3"><a href="/tags">Tags</a></h2>
+        {{ if not (eq (len $.Site.Taxonomies.tags) 0) }}
+          {{ $fontUnit := "rem" }}
+          {{ $largestFontSize := 2.0 }}
+          {{ $largestFontSize := 2.5 }}
+          {{ $smallestFontSize := 1.0 }}
+          {{ $fontSpread := sub $largestFontSize $smallestFontSize }}
+          {{ $max := add (len (index $.Site.Taxonomies.tags.ByCount 0).Pages) 1 }}
+          {{ $min := len (index $.Site.Taxonomies.tags.ByCount.Reverse 0).Pages }}
+          {{ $spread := sub $max $min }}
+          {{ $fontStep := div $fontSpread $spread }}
+          <div id="tag-cloud" style="padding: 5px 15px">
+              {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
+                  {{ $currentTagCount := len $taxonomy.Pages }}
+                  {{ $currentFontSize := (add $smallestFontSize (mul (sub $currentTagCount $min) $fontStep) ) }}
+                  {{ $count := len $taxonomy.Pages }}
+                  {{ $weigth := div (sub (math.Log $count) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
+                  {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth) ) }}
+                  <!--Current font size: {{$currentFontSize}}-->
+                  <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" style="font-size:{{$currentFontSize}}{{$fontUnit}}">{{ $name }}</a>
+              {{ end }}
+          </div>
+{{ end }}
     </div>
-  </section>
-  {{ end }}
+  </div>
+</section>
 {{ end }}
 
 {{ define "sidebar-footer" }}
-{{ if site.Params.doks.sectionFooter -}}
-<section class="section section-md container-fluid bg-light">
+<section class="section section-sm container-fluid">
   <div class="row justify-content-center text-center">
-    <div class="col-lg-7">
-      <h2 class="mt-2">Start building with Doks today</h2>
-      <a class="btn btn-primary rounded-pill px-4 my-2" href="/docs/{{ if site.Params.doks.docsVersioning }}{{ site.Params.doks.docsVersion }}/{{ end }}prologue/introduction/" role="button">{{ i18n "get-started" }}</a>
+    <div class="col-lg-9">
+      {{- .Content -}}
     </div>
   </div>
 </section>
-{{ end -}}
 {{ end }}

@@ -1,19 +1,8 @@
 ---
 title: "Blog"
-description: ""
-summary: ""
-date: 2023-09-07T16:21:44+02:00
-lastmod: 2023-09-07T16:21:44+02:00
+description: "The foreops blog."
+date: 2020-10-06T08:49:55+00:00
+lastmod: 2020-10-06T08:49:55+00:00
 draft: false
-weight: 50
-categories: []
-tags: []
-contributors: []
-pinned: false
-homepage: false
-seo:
-  title: "" # custom title (optional)
-  description: "" # custom description (recommended)
-  canonical: "" # custom canonical URL (optional)
-  noindex: false # false (default) or true
+images: []
 ---
